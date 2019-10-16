@@ -9,34 +9,10 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 <br>
 ### Overview of how the app is organized
 
-CLI App
-
-   * Inside of `random.txt` put the following in with no extra characters or white space:
-
-     * spotify-this-song,"I Want it That Way"
-
-6. Make a JavaScript file named `liri.js`.
-
-7. At the top of the `liri.js` file, add code to read and set any environment variables with the dotenv package:
+This is a command line interface program
 
 
-```js
-require("dotenv").config();
-```
-
-8. Add the code required to import the `keys.js` file and store it in a variable.
-
-```js
-  var keys = require("./keys.js");
-```
-  
-* You should then be able to access your keys information like so
-
-  ```js
-  var spotify = new Spotify(keys.spotify);
-  ```
-
-9. Make it so liri.js can take in one of the following commands:
+The file liri.js can take in one of the following commands followed by the desired search term:
 
    * `concert-this`
 
@@ -46,12 +22,19 @@ require("dotenv").config();
 
    * `do-what-it-says`
 
+   * do-what-it-says reads `random.txt` which will run the following command:
+
+     * spotify-this-song,"I Want it That Way"
+
+
+
+
 <br>
 ### start-to-finish instructions on how to run the app
 
-1. `node liri.js concert-this <artist/band name here>`
+If the user inputs `node liri.js concert-this <artist/band name here>`
 
-   * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
+   * This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
      * Name of the venue
 
@@ -59,9 +42,6 @@ require("dotenv").config();
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-    * **Important**: There is no need to sign up for a Bands in Town `api_id` key. Use the `codingbootcamp` as your `app_id`. For example, the URL used to search for "Celine Dion" would look like the following:
-
-      * `https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp`
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
