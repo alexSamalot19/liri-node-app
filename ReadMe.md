@@ -43,7 +43,7 @@ If the user inputs `node liri.js concert-this <artist/band name here>`
 
      * Venue location
 
-     * Date of the Event (use moment to format this as "MM/DD/YYYY")
+     * Date of the Event ("MM/DD/YYYY")
 
 
 If the user inputs `node liri.js spotify-this-song '<song name here>'`
